@@ -62,11 +62,6 @@
             document.getElementById("sum[" + i + "]").innerHTML = sum;
         }
     }
-    
-    inputs = document.getElementsByTagName('input');
-    for (i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener("keyup", enterListener);
-    }
 
     function enterListener() {
         if (event.key === "Enter") {
@@ -115,7 +110,17 @@
         leaders.innerHTML = '<input class="leaders" name="value[' + rows + ']" type="number">';
         score.className = 'score'
         score.innerHTML = '<div class="score" id="sum[' + rows + ']">0</div>';
+        addListeners()
     }
+
+    function addListeners() {
+        inputs = document.getElementsByTagName('input');
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener("keyup", enterListener);
+        }
+    }
+
+    addListeners()
 
 </script>
 
