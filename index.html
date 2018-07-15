@@ -66,10 +66,15 @@
     function enterListener() {
         if (event.key === "Enter") {
         event.preventDefault()
-        const inputs =
-            Array.prototype.slice.call(document.querySelectorAll("input"))
-        const index =
-            (inputs.indexOf(document.activeElement) + 1) % inputs.length
+        const inputs = Array.prototype.slice.call(document.querySelectorAll("input"))
+        let index = 0
+        if (inputs.indexOf(document.activeElement) === inputs.length-2) {
+            index = inputs.indexOf(document.activeElement)
+        } else if (inputs.indexOf(document.activeElement) >= (rows - 1) * 9) {
+            index = (inputs.indexOf(document.activeElement) + 10) % (inputs.length-1)
+        } else {
+            index = (inputs.indexOf(document.activeElement) + 9) % (inputs.length-1)
+        }
         const input = inputs[index]
         input.focus()
         input.select()
