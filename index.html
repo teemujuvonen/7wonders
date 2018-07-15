@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,700i" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+    <table id="score">
+        <tr class="row">
+            <th></td>
+            <th><img class="img" src="./img/war.png" /></td>
+            <th><img class="img" src="./img/coins.png" /></td>
+            <th><img class="img" src="./img/wonder.png" /></td>
+            <th><img class="img" src="./img/civic.png" /></td>
+            <th><img class="img" src="./img/commerce.png" /></td>
+            <th><img class="img" src="./img/guild.png" /></td>
+            <th><img class="img" src="./img/science.png" /></td>
+            <th><img class="img" src="./img/leaders.png" /></td>
+            <th></th>
+        </tr>
+        <tr class="row">
+            <td class="name"><input class="name" type="text"></td>
+            <td class="war"><input class="war" name="value" type="number"></td>
+            <td class="money"><input class="money" name="value" type="number"></td>
+            <td class="miracles"><input class="miracles" name="value" type="number"></td>
+            <td class="wonders"><input class="wonders" name="value" type="number"></td>
+            <td class="commercial"><input class="commercial" name="value" type="number"></td>
+            <td class="guilds"><input class="guilds" name="value" type="number"></td>
+            <td class="science"><input class="science" name="value" type="number"></td>
+            <td class="leaders"><input class="leaders" name="value" type="number"></td>
+            <td class="score">
+                <div class="score" id="sum">0</div>
+            </td>
+        </tr>
+    </table>
+    <input type="button" class="button" value="Add a player" onclick="addRow()">
+    </div>
+</body>
+
+<script>
+    var rows = 1;
+    var inputs = document.getElementsByName("value");
+    for (var i = 0; i < inputs.length; i+1) {
+        inputs[i].setAttribute("name","value["+ rows +"]");
+    }
+    var sum = document.getElementById("sum").setAttribute("id","sum["+ rows +"]");;
+
+    document.body.addEventListener("keyup", calc);
+
+    function calc() {
+        for (var i = 1; i <= rows; i++) {
+            var arr = document.getElementsByName("value[" + i + "]");
+            var sum = 0;
+            for (var j = 0; j < arr.length; j++) {
+                if (parseInt(arr[j].value))
+                    sum += parseInt(arr[j].value);
+            }
+            document.getElementById("sum[" + i + "]").innerHTML = sum;
+        }
+    }
+
+    function addRow() {
+        rows = rows + 1;
+        var table = document.getElementById("score");
+        var row = table.insertRow(-1);
+        var name = row.insertCell(0);
+        var war = row.insertCell(1);
+        var money = row.insertCell(2);
+        var miracles = row.insertCell(3);
+        var wonders = row.insertCell(4);
+        var commercial = row.insertCell(5);
+        var guilds = row.insertCell(6);
+        var science = row.insertCell(7);
+        var leaders = row.insertCell(8);
+        var score = row.insertCell(9);
+        name.className = 'name'
+        name.innerHTML = '<input class="name" type="text">';
+        war.className = 'war'
+        war.innerHTML = '<input class="war" name="value[' + rows + ']" type="number">';
+        money.className = 'money'
+        money.innerHTML = '<input class="money" name="value[' + rows + ']" type="number">';
+        miracles.className = 'miracles'
+        miracles.innerHTML = '<input class="miracles" name="value[' + rows + ']" type="number">';
+        wonders.className = 'wonders'
+        wonders.innerHTML = '<input class="wonders" name="value[' + rows + ']" type="number">';
+        commercial.className = 'commercial'
+        commercial.innerHTML = '<input class="commercial" name="value[' + rows + ']" type="number">';
+        guilds.className = 'guilds'
+        guilds.innerHTML = '<input class="guilds" name="value[' + rows + ']" type="number">';
+        science.className = 'science'
+        science.innerHTML = '<input class="science" name="value[' + rows + ']" type="number">';
+        leaders.className = 'leaders'
+        leaders.innerHTML = '<input class="leaders" name="value[' + rows + ']" type="number">';
+        score.className = 'score'
+        score.innerHTML = '<div class="score" id="sum[' + rows + ']">0</div>';
+    }
+
+</script>
+
+</html>

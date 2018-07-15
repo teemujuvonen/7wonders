@@ -1,0 +1,120 @@
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    background-color: #444444;
+}
+
+.container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table, tr {
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0;
+}
+
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 90;
+    height: 100;
+    padding: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+}
+input:focus { outline: none; }
+
+.name {
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    width: 170;
+    border: none;
+}
+
+.war {
+    background-color: #d91f26;
+    border: none;
+}
+
+.money {
+    background-color: #aa8e6a;
+    border: none;
+}
+
+.miracles {
+    background-color: #e9c44a;
+    border: none;
+}
+
+.wonders {
+    background-color: #2276cf;
+    border: none;
+}
+
+.commercial {
+    background-color: #e9a33d;
+    border: none;
+}
+
+.science {
+    background-color: #1a7b30;
+    border: none;
+}
+
+.guilds {
+    background-color: #92278f;
+    border: none;
+}
+
+.leaders {
+    background-color: #333333;
+    border: none;
+}
+
+.score {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36;
+    font-weight: bold;
+    text-align: center;
+    width: 90;
+    height: 100;
+    padding: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.img {
+    width: 70%;
+}
+
+.button {
+    border: 0;
+    margin-top: 40;
+    font-weight: normal;
+    background-color: #666666;
+    height: 100;
+    width: 250;
+}
