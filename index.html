@@ -62,6 +62,24 @@
             document.getElementById("sum[" + i + "]").innerHTML = sum;
         }
     }
+    
+    inputs = document.getElementsByTagName('input');
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("keyup", enterListener);
+    }
+
+    function enterListener() {
+        if (event.key === "Enter") {
+        event.preventDefault()
+        const inputs =
+            Array.prototype.slice.call(document.querySelectorAll("input"))
+        const index =
+            (inputs.indexOf(document.activeElement) + 1) % inputs.length
+        const input = inputs[index]
+        input.focus()
+        input.select()
+        }
+    }
 
     function addRow() {
         rows = rows + 1;
