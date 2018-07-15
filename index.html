@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <title>7 Wonders score sheet</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,700i" rel="stylesheet">
 </head>
@@ -15,8 +17,8 @@
             <th><img class="img" src="./img/wonder.png" /></td>
             <th><img class="img" src="./img/civic.png" /></td>
             <th><img class="img" src="./img/commerce.png" /></td>
-            <th><img class="img" src="./img/guild.png" /></td>
             <th><img class="img" src="./img/science.png" /></td>
+            <th><img class="img" src="./img/guild.png" /></td>
             <th><img class="img" src="./img/leaders.png" /></td>
             <th></th>
         </tr>
@@ -27,8 +29,8 @@
             <td class="miracles"><input class="miracles" name="value" type="number"></td>
             <td class="wonders"><input class="wonders" name="value" type="number"></td>
             <td class="commercial"><input class="commercial" name="value" type="number"></td>
-            <td class="guilds"><input class="guilds" name="value" type="number"></td>
             <td class="science"><input class="science" name="value" type="number"></td>
+            <td class="guilds"><input class="guilds" name="value" type="number"></td>
             <td class="leaders"><input class="leaders" name="value" type="number"></td>
             <td class="score">
                 <div class="score" id="sum">0</div>
@@ -71,8 +73,8 @@
         var miracles = row.insertCell(3);
         var wonders = row.insertCell(4);
         var commercial = row.insertCell(5);
-        var guilds = row.insertCell(6);
-        var science = row.insertCell(7);
+        var science = row.insertCell(6);
+        var guilds = row.insertCell(7);
         var leaders = row.insertCell(8);
         var score = row.insertCell(9);
         name.className = 'name'
@@ -87,10 +89,10 @@
         wonders.innerHTML = '<input class="wonders" name="value[' + rows + ']" type="number">';
         commercial.className = 'commercial'
         commercial.innerHTML = '<input class="commercial" name="value[' + rows + ']" type="number">';
-        guilds.className = 'guilds'
-        guilds.innerHTML = '<input class="guilds" name="value[' + rows + ']" type="number">';
         science.className = 'science'
         science.innerHTML = '<input class="science" name="value[' + rows + ']" type="number">';
+        guilds.className = 'guilds'
+        guilds.innerHTML = '<input class="guilds" name="value[' + rows + ']" type="number">';
         leaders.className = 'leaders'
         leaders.innerHTML = '<input class="leaders" name="value[' + rows + ']" type="number">';
         score.className = 'score'
