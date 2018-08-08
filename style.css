@@ -118,3 +118,8 @@ input:focus { outline: none; }
     height: 100;
     width: 250;
 }
+
+.button2 {
+    margin-top: 80;
+    margin-bottom: 40;
+}
