@@ -38,6 +38,7 @@
         </tr>
     </table>
     <input type="button" class="button" value="Add a player" onclick="addRow()">
+    <input type="button" class="button button2" value="Reset" onclick="reset()">
     </div>
 </body>
 
@@ -68,10 +69,10 @@
         event.preventDefault()
         const inputs = Array.prototype.slice.call(document.querySelectorAll("input"))
         let index = 0
-        if (inputs.indexOf(document.activeElement) === inputs.length-2) {
+        if (inputs.indexOf(document.activeElement) === inputs.length-3) {
             index = inputs.indexOf(document.activeElement)
         } else if (inputs.indexOf(document.activeElement) >= (rows - 1) * 9) {
-            index = (inputs.indexOf(document.activeElement) + 10) % (inputs.length-1)
+            index = (inputs.indexOf(document.activeElement) + 11) % (inputs.length-1)
         } else {
             index = (inputs.indexOf(document.activeElement) + 9) % (inputs.length-1)
         }
@@ -122,6 +123,22 @@
         inputs = document.getElementsByTagName('input');
         for (i = 0; i < inputs.length; i++) {
             inputs[i].addEventListener("keyup", enterListener);
+        }
+    }
+
+    function reset() {
+        inputs = document.getElementsByTagName('input');
+        for (i = 0; i < inputs.length; i++) {
+            if (inputs[i].className !== 'name') {
+                inputs[i].value = inputs[i].defaultValue
+            }
+        }
+        inputs = document.getElementsByClassName('score');
+        console.log(inputs)
+        for (i = 0; i < inputs.length; i++) {
+            if (inputs[i].tagName === 'DIV') {
+                inputs[i].innerText = 0
+            }
         }
     }
 
