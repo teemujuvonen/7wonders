@@ -117,9 +117,11 @@ input:focus { outline: none; }
     background-color: #666666;
     height: 100;
     width: 250;
+    border-radius: 0;
 }
 
 .button2 {
     margin-top: 80;
     margin-bottom: 40;
+    border-radius: 0;
 }
